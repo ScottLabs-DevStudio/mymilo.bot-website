@@ -1,6 +1,6 @@
 # Coding Standards
 
-> Provenance: derived from [ScottLabs-DevStudio/engineering-standards@18b06c7](https://github.com/ScottLabs-DevStudio/engineering-standards/tree/18b06c7148277cb74a6c9db3dcdcff5c42eb74c9) (base + add-ons: none), which adapts [microsoft/hve-core@6cd810c](https://github.com/microsoft/hve-core/tree/6cd810c7b9448d98ea07db0a7a9124824d32dacc) (`6cd810c7b9448d98ea07db0a7a9124824d32dacc`, MIT, text only). Repo-specific rules added below take precedence.
+> Provenance: derived from the ScottLabs shared engineering standards (base only), which adapt [microsoft/hve-core@6cd810c](https://github.com/microsoft/hve-core/tree/6cd810c7b9448d98ea07db0a7a9124824d32dacc) (`6cd810c7b9448d98ea07db0a7a9124824d32dacc`, MIT, text only). Repo-specific rules added below take precedence.
 
 Vendored or upstream code (copied from another project) is exempt from these standards; apply them to our own changes only.
 
@@ -26,12 +26,13 @@ Vendored or upstream code (copied from another project) is exempt from these sta
 ## Git and review
 
 - Conventional Commit subjects in imperative mood (`feat`, `fix`, `refactor`, `perf`, `test`, `docs`, `build`, `ops`, `chore`), under 100 bytes; optional short bulleted body.
-- One push per reviewable unit. Merge commits only: never rebase or force-push shared branches.
+- One push per reviewable unit. Never rebase or force-push shared branches.
+- Merge strategy is set per repo; follow this repo's own setting.
 - Answer every review thread before ship.
 - No secrets in repos, argv, URLs, CI output, logs, or client bundles. No new keys or paid services without approval.
 - Pin dependencies (lockfiles) and pin third-party GitHub Actions to full commit SHAs. Workflows default to `permissions: contents: read`; grant more per job only when needed, never `write-all`.
-- Security review uses [security/owasp-checklist.md](https://github.com/ScottLabs-DevStudio/engineering-standards/blob/18b06c7148277cb74a6c9db3dcdcff5c42eb74c9/security/owasp-checklist.md).
+- Security review follows the [OWASP Top 10](https://owasp.org/Top10/2025/).
 
 ## Provenance
 
-Commit, documentation, and workflow rules adapted from [microsoft/hve-core](https://github.com/microsoft/hve-core) at `6cd810c7b9448d98ea07db0a7a9124824d32dacc`: `.github/instructions/hve-core/commit-message.instructions.md`, `.github/instructions/coding-standards/typescript/typescript-doc-comments.instructions.md` (generalized), `.github/instructions/workflows.instructions.md` (pinning and permissions), `.github/instructions/coding-standards/bash/bash.instructions.md` (error visibility). Correctness and test rules generalized from ScottLabs-DevStudio/DEH-Forex PR #47. Standards text only; see [NOTICE](https://github.com/ScottLabs-DevStudio/engineering-standards/blob/18b06c7148277cb74a6c9db3dcdcff5c42eb74c9/NOTICE).
+Commit, documentation, and workflow rules adapted from [microsoft/hve-core](https://github.com/microsoft/hve-core) at `6cd810c7b9448d98ea07db0a7a9124824d32dacc`: `.github/instructions/hve-core/commit-message.instructions.md`, `.github/instructions/coding-standards/typescript/typescript-doc-comments.instructions.md` (generalized), `.github/instructions/workflows.instructions.md` (pinning and permissions), `.github/instructions/coding-standards/bash/bash.instructions.md` (error visibility). Correctness and test rules are ScottLabs practice. Standards text only; hve-core is MIT-licensed, Copyright (c) Microsoft Corporation ([LICENSE](https://github.com/microsoft/hve-core/blob/6cd810c7b9448d98ea07db0a7a9124824d32dacc/LICENSE)).
